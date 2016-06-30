@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>eventScapade Master</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+       
+    </asp:ContentPlaceHolder>
+    <link href="styles/masterStyle.css" rel="stylesheet" />
+   
+</head>
+<body>
+   
+    <form id="form1" runat="server">
+         <div class="overAllContainer">
+
+     <div class="wrapper"> 
+                      <div class="headerbar">
+                          <div class="loginbutton">
+                              <asp:Panel ID="loginButton" runat="server">
+                                  &nbsp;&nbsp;<asp:Button ID="btnLogin" runat="server" BackColor="#B693D9" ForeColor="#333333" OnClick="btnLogin_Click" Text="Login" Width="83px" />
+&nbsp;&nbsp;<asp:ImageButton ID="btnRegister" runat="server" Height="30px" ImageUrl="~/images/reg.png" OnClick="btnRegister_Click" style="margin-top: 0px" Width="133px" />
+                                  <br />
+                                  &nbsp;<asp:CheckBox ID="chkPersist" runat="server" Font-Size="Small" Text="Stay Logged in?" />
+&nbsp;&nbsp;
+                               
+                              <asp:Label ID="lblInvalid" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Small" ForeColor="Red"></asp:Label>
+                </asp:Panel>
+                                  </div>
+                          
+                          <div class ="loginPanel">
+                          <asp:Panel ID="loginPanel" runat="server">
+             &nbsp;<asp:Label ID="lblUsername" runat="server" Font-Size="Small" Text="Username:" ForeColor="#666666"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+                          <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
+
+                          <br />
+                              <br />
+&nbsp;<asp:Label ID="lblPassword" runat="server" Font-Size="Small" Text="Password:" ForeColor="#666666"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+                          <asp:TextBox ID="txtPassword" runat="server" style="margin-top: 0px"></asp:TextBox>
+                              </asp:Panel>
+                              </div>
+                          <asp:Panel ID="loggedIn" runat="server" Height="49px">
+                              <asp:Label ID="lblWelcome" runat="server" Text="Welcome back " Font-Names="Georgia" ForeColor="#333333"></asp:Label>
+                              <asp:Label runat="server" Font-Names="Georgia" Text="lblAuthUser" ForeColor="#333333" ID="lblAuthUser"></asp:Label>
+                              &nbsp;<asp:Label ID="lblEx" runat="server" Font-Names="Georgia" Text="!" ForeColor="#333333"></asp:Label>
+                              <br />
+                              <asp:Button ID="btnShoppingCart" runat="server" BackColor="#B693D9" Font-Bold="True" Font-Names="Georgia" ForeColor="#666666" OnClick="btnShoppingCart_Click" Text="Shopping Cart" Width="164px" />
+                              <asp:Button ID="btnLogout" runat="server" BackColor="#B693D9" Font-Bold="True" Font-Names="Georgia" ForeColor="#666666" OnClick="btnLogout_Click" Text="Logout" Width="116px" />
+                          </asp:Panel>
+             </div>
+         
+                      <%--end of sign in --%>
+
+            <div class="header">
+                
+              
+
+
+                <asp:HyperLink ID="hlkHome" runat="server" Font-Size="Smaller" Height="150px" NavigateUrl="~/home.aspx" Width="700px"></asp:HyperLink>
+                
+              
+
+
+            </div>
+        </div><%-- end of wrappper div--%> 
+
+             <div class="navBar">
+                 
+
+                 <asp:Button CssClass="navButton" ID="btnEvents" runat="server" Text="Events" OnClick="btnEvents_Click"  />
+
+                
+
+                 <asp:Button  CssClass="navButton" ID="btnOffers" runat="server" Text="Offers" OnClick="btnOffers_Click" />
+
+                 
+
+                 <asp:Button  CssClass="navButton" ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+
+                 
+
+                 <asp:Button  CssClass="navButton" ID="btnContact" runat="server" Text="Contact" OnClick="btnContact_Click" />
+
+             </div> <%--end of navBar--%>
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <!--master page Content ends here-->
+
+        <div class="container">
+           
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+         
+            
+       
+
+        </div>
+              
+
+<div class="footer"></div>
+
+    </div>
+        
+        </form>
+</body>
+
+</html>
